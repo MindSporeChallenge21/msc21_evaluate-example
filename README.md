@@ -1,4 +1,18 @@
-# msc21_yolo3_evaluate-example
-This is the example source code including a checkpoint file for you to test out the process on evaluation platform
+# YoloV3 msc21_evaluation_example
+> This repos contains the trained **checkpoint file** and the example **YoloV3-based source code** (zip) for model arts evaluation
+> ## resource
+1. [All dowbloadable resources](https://github.com/MindSporeChallenge21/CNN_evaluation_example/releases/tag/v1.0)
+2. [checkpoint file](https://github.com/MindSporeChallenge21/CNN_evaluation_example/releases/download/v1.0/bamboo_conv.ckpt)
+3. [source code (paticipant_model.py)](https://github.com/MindSporeChallenge21/CNN_evaluation_example/releases/download/v1.0/participant_model.py)
 
-> Please Go to Release to Download the CKPT file and source code file
+Please download the ".ckpt" file & the ".py" file and upload it to the [evauation platform](https://mindsporechallenge.com/submission)
+
+---
+# CNN ModelArts Evaluation Example
+## resource
+1. [All dowbloadable resources](https://github.com/MindSporeChallenge21/CNN_evaluation_example/releases/tag/v1.0)
+2. [checkpoint file](https://github.com/MindSporeChallenge21/CNN_evaluation_example/releases/download/v1.0/bamboo_conv.ckpt)
+3. [source code (paticipant_model.py)](https://github.com/MindSporeChallenge21/CNN_evaluation_example/releases/download/v1.0/participant_model.py)
+
+Please download the ".ckpt" file & the ".py" file and upload it to the [evauation platform](https://mindsporechallenge.com/submission)
+
