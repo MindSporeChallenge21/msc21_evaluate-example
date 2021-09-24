@@ -3,7 +3,6 @@ import numpy as np
 import cv2
 from PIL import Image
 
-
 import mindspore as ms
 from mindspore import context, Tensor
 from mindspore.train.serialization import export, load_checkpoint, load_param_into_net
@@ -11,7 +10,6 @@ from mindspore.explainer.explanation import Occlusion
 
 from src.yolov3 import yolov3_resnet18, YoloWithEval
 from src.config import ConfigYOLOV3ResNet18
-
 
 
 cfg = ConfigYOLOV3ResNet18()
@@ -135,34 +133,6 @@ def post_process(iid, prediction):
     result = np.concatenate([pred_boxes, pred_classes], axis=1)
     result = result[result[:, [4,5,6,7]].sum(axis=1) > 1e-5]
     return np.array(result)
-
-    # for batch_idx in range(img_np.shape[0]):
-    #     boxes = output[0].asnumpy()[batch_idx]
-    #     box_scores = output[1].asnumpy()[batch_idx]
-    #     image = img_np[batch_idx,...]
-    #     boxes, classes, scores =tobox(boxes, box_scores)
-    #     #print(classes)
-    #     #print(scores)
-    #     fig = plt.figure()   #相当于创建画板
-    #     ax = fig.add_subplot(1,1,1)   #创建子图，相当于在画板中添加一个画纸，当然可创建多个画纸，具体由其中参数而定
-    #     image_path = os.path.join(cfg.image_dir, image_file)
-    #     f = Image.open(image_path) 
-    #     img_np = np.asarray(f ,dtype=np.float32)  #H，W，C格式 
-    #     ax.imshow(img_np.astype(np.uint8))  #当前画纸中画一个图片
-
-    #     for box_index in range(boxes.shape[0]):
-    #         ymin=boxes[box_index][0]
-    #         xmin=boxes[box_index][1]
-    #         ymax=boxes[box_index][2]
-    #         xmax=boxes[box_index][3]
-    #         #print(xmin,ymin,xmax,ymax)
-    #         #添加方框，(xmin,ymin)表示左顶点坐标，(xmax-xmin),(ymax-ymin)表示方框长宽
-    #         ax.add_patch(plt.Rectangle((xmin,ymin),(xmax-xmin),(ymax-ymin),fill=False,edgecolor='red', linewidth=2))
-    #         #给方框加标注，xmin,ymin表示x,y坐标，其它相当于画笔属性
-    #         ax.text(xmin,ymin,s = str(num_class[classes[box_index]])+str(scores[box_index]),
-    #                 style='italic',bbox={'facecolor': 'blue', 'alpha': 0.5, 'pad': 0})
-    #     plt.show()
-
 
 
 
